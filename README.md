@@ -23,15 +23,15 @@ consent_flow_obp/
 
 1.- Clonar el siguiente repositorio dentro de "Documentos" o  raíz "C:\"
 
-`git clone git@github.com:rengerden/consent_flow_obp.git`
+ ```bashgit clone git@github.com:rengerden/consent_flow_obp.git```
 
 2.- Crear la base de datos con ayuda de Docker Compose
 
-`docker-compose up -d`
+ ```bashdocker-compose up -d```
 
-3.- Copiar el archivo OBP-API.default.props a la ruta del OBP-API`
+3.- Copiar el archivo OBP-API.default.props a la ruta del OBP-API```
 
-`cp props/OBP-API.default.props OBP-API/obp-api/src/main/resources/props/default.props`
+ ```bashcp props/OBP-API.default.props OBP-API/obp-api/src/main/resources/props/default.props```
  4.- Compilar y Ejecutar el proyecto
 
-`nohup ./mvn.sh clean install -pl .,obp-commons && ./mvn.sh jetty:run -pl obp-api`
+ ```bashnohup ./mvn.sh clean install -pl .,obp-commons && ./mvn.sh jetty:run -pl obp-api```
