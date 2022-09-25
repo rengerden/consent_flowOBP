@@ -40,7 +40,7 @@ consent_flow_obp/
  git clone git@github.com:OpenBankProject/OBP-API.git
  ```
 
-4.- Dentro del proyecto que se descargo en el paso 1 se encuentra  el archivo OBP-API.default.props, es necesario copiar este archivo  a la ruta del proyecto OBP-API. Para ello ejecute el siguiente comando.
+4.- Dentro del proyecto que se descargo en el `paso 1` se encuentra  el archivo OBP-API.default.props, es necesario copiar este archivo dentro de la ruta `OBP-API/obp-api/src/main/resources/props/` del proyecto OBP-API. Para ello ejecute el siguiente comando.
 
  ```bash
  cp props/OBP-API.default.props OBP-API/obp-api/src/main/resources/props/default.props
@@ -52,4 +52,20 @@ consent_flow_obp/
  ```
  6.- Ingresar al portal (localhost:8080) para proceder a registrarte 
  > 6.1.- Debido a que el envio de correos no esta configurado se necesita hacer una aprobación manual del usuario que acabas de registrar, para ello es necesario acceder a la base de datos y hacer una actualizacion de la tabla `authuser`, buscas el registro y modificas el campo `validated` con el valor `true`. 
- De esta forma ya podras iniciar sesión y proceder a obtener tu API Key, la cual es necesaria colocar en los properties del `API-Manager` y `API-Explorer`.
+ De esta forma ya podras iniciar sesión y proceder a obtener tu `Conusmer key` y `Consumer Secret`, la cual es necesaria colocar en los properties del `API-Manager` y `API-Explorer`.
+
+---
+## Setup API-Explorer
+
+1.- Clonar el proyecto API-Explorer
+ ```bash 
+ git@github.com:OpenBankProject/API-Explorer.git
+ ```
+
+2.- Dentro del proyecto que se descargo en el `paso 1` se encuentra  el archivo `API-Explorer.default.props`, es necesario copiar este archivo dentro de la ruta `API-Explorer/obp-api/src/main/resources/props/` del proyecto OBP-API. Para ello ejecute el siguiente comando.
+```bash
+cp props/API-Explorer.default.props API-Explorer/src/main/resources/props/default.props
+```
+3.- Modificar el archivo default.props agregando tu `Conusmer key` y `Consumer Secret`
+> **Importante** 
+> Es necesario haber completado el paso 6 y 6.1 de Setup OBP-API para obtener el secret y el key
