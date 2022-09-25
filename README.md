@@ -6,6 +6,7 @@
 > - Docker & Docker Compose
 > - PostgreSql
 > - Git & GitBash
+> - python 3
 
 
 ## Project folder structure
@@ -47,7 +48,7 @@ consent_flow_obp/
  5.- Compilar y Ejecutar el proyecto
 
  ```bash 
- nohup ./mvn.sh clean install -pl .,obp-commons -DskiptTests && ./mvn.sh jetty:run -pl obp-api -DskiptTests
+ mvn clean install -pl .,obp-commons -DskiptTests && ./mvn.sh jetty:run -pl obp-api -DskiptTests
  ```
  6.- Ingresar al portal (localhost:8080) para proceder a registrarte 
  > 6.1.- Debido a que el envio de correos no esta configurado se necesita hacer una aprobación manual del usuario que acabas de registrar, para ello es necesario acceder a la base de datos y hacer una actualizacion de la tabla `authuser`, buscas el registro y modificas el campo `validated` con el valor `true`. 
