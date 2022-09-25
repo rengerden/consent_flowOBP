@@ -51,8 +51,12 @@ consent_flow_obp/
  mvn install -pl .,obp-commons && mvn jetty:run -pl obp-api
  ```
  6.- Ingresar al portal (localhost:8080) para proceder a registrarte 
- > 6.1.- Debido a que el envio de correos no esta configurado se necesita hacer una aprobación manual del usuario que acabas de registrar, para ello es necesario acceder a la base de datos y hacer una actualizacion de la tabla `authuser`, buscas el registro y modificas el campo `validated` con el valor `true`. 
+ 
+ > 6.1  Debido a que el envio de correos no esta configurado se necesita hacer una aprobación manual del usuario que acabas de registrar, para ello es necesario acceder a la base de datos y hacer una actualizacion de la tabla `authuser`, buscas el registro y modificas el campo `validated` con el valor `true`. 
  De esta forma ya podras iniciar sesión y proceder a obtener tu `Conusmer key` y `Consumer Secret`, la cual es necesaria colocar en los properties del `API-Manager` y `API-Explorer`.
+ 
+ 7.- Inicia sesion en el portal y da click en `Get API Key` completa el formulario y guarda la información que te proporciona, debido a que no la vuelve a mostrar jamás.
+ > *Nota* En el campo de `Redirect URL (Optional)` coloca la URL `localhost:8082`
 
 ---
 ## Setup API-Explorer
@@ -69,3 +73,8 @@ cp props/API-Explorer.default.props API-Explorer/src/main/resources/props/defaul
 3.- Modificar el archivo default.props agregando tu `Conusmer key` y `Consumer Secret`
 > **Importante** 
 > Es necesario haber completado el paso 6 y 6.1 de Setup OBP-API para obtener el secret y el key
+
+4.- Procede a ejecutar el proyecto con el siguiente comando
+ ```bash 
+ mvn jetty:run
+ ```
