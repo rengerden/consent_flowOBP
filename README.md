@@ -50,6 +50,8 @@ consent_flow_obp/
  ```bash 
  mvn install -pl .,obp-commons && mvn jetty:run -pl obp-api
  ```
+ > *Nota* Si al abrir el protal no te aparecen los botones en el lado superior derecho correspondiente a `Register y Logon` lo mas seguro es que tengas un problema por el path del JDK utilizado, debido a los espacios con los que Windows trabaja, la solución es que agregues el JDK a otra ruta por ejemplo `C:\opt\jdk1.8.0_341` y actualizar la variable de entorno JAVA_HOME `setx -m JAVA_HOME "C:\Progra~1\Java\jdk1.8.0_XX"`, con esto reinicias tu consola y vuelves a aplicar los pasos anteriores.
+ 
  6.- Ingresar al portal (localhost:8080) para proceder a registrarte 
  
  > 6.1  Debido a que el envio de correos no esta configurado se necesita hacer una aprobación manual del usuario que acabas de registrar, para ello es necesario acceder a la base de datos y hacer una actualizacion de la tabla `authuser`, buscas el registro y modificas el campo `validated` con el valor `true`. 
