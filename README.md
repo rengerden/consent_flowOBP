@@ -79,3 +79,7 @@ cp props/API-Explorer.default.props API-Explorer/src/main/resources/props/defaul
   mvn -Djetty.port=8082 jetty:run
  ```
 > *Nota* Si se siguieron los pasos correctos podras iniciar sesión en el `API-Explorer` a traves del login del `OBP-API` y este te redireccionara al `API-Explorer` automaticamente, en caso contrario podras actualizar el dato `redirect-url` a traves del API `/obp/v5.0.0/management/consumers/CONSUMER_ID/consumer/redirect_url` o acutalizando el dato en la tabla `consumer` busca el registro y actualiza el campo `redirecturl`.
+
+----
+## Setup API-Manager
+
