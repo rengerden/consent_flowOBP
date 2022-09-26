@@ -56,7 +56,7 @@ consent_flow_obp/
  De esta forma ya podras iniciar sesión y proceder a obtener tu `Conusmer key` y `Consumer Secret`, la cual es necesaria colocar en los properties del `API-Manager` y `API-Explorer`.
  
  7.- Inicia sesion en el portal y da click en `Get API Key` completa el formulario y guarda la información que te proporciona, debido a que no la vuelve a mostrar jamás.
- > *Nota* En el campo de `Redirect URL (Optional)` coloca la URL `localhost:8082`
+ > *Nota* En el campo de `Redirect URL (Optional)` coloca la URL `http://localhost:8082`
 
 ---
 ## Setup API-Explorer
@@ -76,5 +76,6 @@ cp props/API-Explorer.default.props API-Explorer/src/main/resources/props/defaul
 
 4.- Procede a ejecutar el proyecto con el siguiente comando
  ```bash 
- mvn jetty:run
+  mvn -Djetty.port=8082 jetty:run
  ```
+> *Nota* Si se siguieron los pasos correctos podras iniciar sesión en el `API-Explorer` a traves del login del `OBP-API` y este te redireccionara al `API-Explorer` automaticamente, en caso contrario podras actualizar el dato `redirect-url` a traves del API `/obp/v5.0.0/management/consumers/CONSUMER_ID/consumer/redirect_url` o acutalizando el dato en la tabla `consumer` busca el registro y actualiza el campo `redirecturl`.
