@@ -15,6 +15,8 @@
 consent_flow_obp/ 
 ├── props
 │   └── OBP-API.default.props
+│   └── API-Explorer.default.props
+│   └── API-Manager.local_settings.py
 ├── docker-compose.yml
 
 
@@ -58,7 +60,7 @@ consent_flow_obp/
  De esta forma ya podras iniciar sesión y proceder a obtener tu `Conusmer key` y `Consumer Secret`, la cual es necesaria colocar en los properties del `API-Manager` y `API-Explorer`.
  
  7.- Inicia sesion en el portal y da click en `Get API Key` completa el formulario y guarda la información que te proporciona, debido a que no la vuelve a mostrar jamás.
- > *Nota* En el campo de `Redirect URL (Optional)` coloca la URL `http://localhost:8082`
+ > **Nota** En el campo de `Redirect URL (Optional)` coloca la URL `http://localhost:8082`
 
 ---
 ## Setup API-Explorer
@@ -85,3 +87,14 @@ cp props/API-Explorer.default.props API-Explorer/src/main/resources/props/defaul
 ----
 ## Setup API-Manager
 
+
+1.- Clonar el proyecto API-Explorer
+ ```bash 
+ git@github.com:OpenBankProject/API-Manager.git
+ ```
+2.- Dentro del proyecto que se descargo en el `paso 1` se encuentra  el archivo `API-Manager.local_settings.py`, es necesario copiar este archivo dentro de la ruta `API-Explorer/obp-api/src/main/resources/props/` del proyecto OBP-API. Para ello ejecute el siguiente comando.
+```bash
+cp props/API-Manager.local_settings.py API-Manager\apimanager\apimanager\local_settings.py
+```
+> **Nota** En la documantación tienen un error ya que mencionan que debe crear el archivo `local_setting.py` pero le falta una `s`
+> 
