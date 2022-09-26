@@ -6,7 +6,7 @@
 > - Docker & Docker Compose
 > - PostgreSql
 > - Git & GitBash
-> - python 3
+> - python 3.9
 
 
 ## Project folder structure
